@@ -3,6 +3,7 @@ package chess.board;
 import java.util.List;
 
 import chess.conditions.PieceCellOccupyBlocker;
+import chess.player.Player;
 
 // Bir satranç tahtası oyunu için model sınıfı. 
 // Bir panonun bir boyutu ve bir hücre ızgarası vardır.

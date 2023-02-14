@@ -9,6 +9,7 @@ import chess.board.Piece;
 import chess.conditions.MoveBaseCondition;
 import chess.conditions.PieceCellOccupyBlocker;
 import chess.conditions.PieceMoveFurtherCondition;
+import chess.player.Player;
 
 //Belirli bir hareket türü için tüm olası hücreleri döndüren sağlayıcı sınıfı. 
 //Örneğin, yatay hareket türü, yalnızca yatay hareketler yaparak ulaşılabilen tüm hücreleri verecektir.
@@ -26,9 +27,7 @@ public abstract class BasicMovesClass {
         this.baseBlocker = baseBlocker;
     }
 
-    /**
-     * Public method which actually gives all possible cells which can be reached via current type of move.
-     */
+    // Geçerli hareket türüyle ulaşılabilecek tüm olası hücreleri gerçekten veren genel yöntem
     public List<Cell> possibleMoves(Piece piece, Board inBoard, List<PieceCellOccupyBlocker> additionalBlockers, Player player) {
         if (baseCondition.isBaseConditionFullfilled(piece)) {
             return possibleMovesAsPerCurrentType(piece, inBoard, additionalBlockers, player);
@@ -36,14 +35,10 @@ public abstract class BasicMovesClass {
         return null;
     }
 
-    /**
-     * Abstract method which needs to be implemented by each type of move to give possible moves as per their behaviour.
-     */
+    //Davranışlarına göre olası hareketleri vermek için her hareket türü tarafından uygulanması gereken soyut yöntem
     protected abstract List<Cell> possibleMovesAsPerCurrentType(Piece piece, Board board, List<PieceCellOccupyBlocker> additionalBlockers, Player player);
 
-    /**
-     * Helper method used by all the sub types to create the list of cells which can be reached.
-     */
+    // Ulaşılabilen hücrelerin listesini oluşturmak için tüm alt türler tarafından kullanılan yardımcı yöntem.
     protected List<Cell> findAllNextMoves(Piece piece, NextCellProvider nextCellProvider, Board board, List<PieceCellOccupyBlocker> cellOccupyBlockers, Player player) {
         List<Cell> result = new ArrayList<>();
         Cell nextCell = nextCellProvider.nextCell(piece.getCurrentCell());
@@ -62,11 +57,9 @@ public abstract class BasicMovesClass {
         return result;
     }
 
-    /**
-     * Helper method which checks if a given cell can be occupied by the piece or not. It makes use of list of
-     * {@link PieceCellOccupyBlocker}s passed to it while checking. Also each move has one base blocker which it should
-     * also check.
-     */
+    
+    // Belirli bir hücrenin parça tarafından işgal edilip edilemeyeceğini kontrol eden yardımcı yöntem. listesinden yararlanır
+     
     private boolean checkIfCellCanBeOccupied(Piece piece, Cell cell, Board board, List<PieceCellOccupyBlocker> additionalBlockers, Player player) {
         if (baseBlocker != null && baseBlocker.isCellNonOccupiableForPiece(cell, piece, board, player)) {
             return false;

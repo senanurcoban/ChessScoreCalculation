@@ -1,8 +1,10 @@
 package chess;
 
+// Soru kitapçığında gönderilen satranç tahta formatı tanımlandı.
+
 public class invariants {
 
-	public static final String FILE_NAME = "chess.txt";
+	public static final String FILE_NAME = "board3.txt";
     public static final int LINE = 8;
     public static final int COLUMN = 8;
     public static final int TEXT_INDEX = 0;
