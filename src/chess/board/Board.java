@@ -1,9 +1,5 @@
 package chess.board;
 
-import java.util.List;
-
-import chess.conditions.PieceCellOccupyBlocker;
-import chess.player.Player;
 
 // Bir satranç tahtası oyunu için model sınıfı. 
 // Bir panonun bir boyutu ve bir hücre ızgarası vardır.
@@ -51,33 +47,9 @@ public class Board {
         return cells[x][y];
     }
 
-    // Oyuncunun mevcut tahtada kontrolde olup olmadığını belirlemek için yardımcı yöntem
-    public boolean isPlayerOnCheck(Player player) {
-        return checkIfPieceCanBeKilled(player.getPiece(PieceType.KING), kingCheckEvaluationBlockers(), player);
-    }
+   
 
-    /**
-     *Taşın mevcut tahta konfigürasyonuna göre şu anda rakip tarafından öldürülüp öldürülemeyeceğini kontrol etme yöntemi.
-     *
-     * @param targetPiece        Piece which is to be checked.
-     * @param cellOccupyBlockers Blockers which make cell non occupiable.
-     * @param player             Player whose piece has to be checked.
-     * @return Boolean indicating whether the piece is in danger or not.
-     */
-    public boolean checkIfPieceCanBeKilled(Piece targetPiece, List<PieceCellOccupyBlocker> cellOccupyBlockers, Player player) {
-        for (int i = 0; i < getBoardSize(); i++) {
-            for (int j = 0; j < getBoardSize(); j++) {
-                Piece currentPiece = getCellAtLocation(i, j).getCurrentPiece();
-                if (currentPiece != null && !currentPiece.isPieceFromSamePlayer(targetPiece)) {
-                    List<Cell> nextPossibleCells = currentPiece.nextPossibleCells(this, cellOccupyBlockers, player);
-                    if (nextPossibleCells.contains(targetPiece.getCurrentCell())) {
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
-    }
+   
 	
 
 	

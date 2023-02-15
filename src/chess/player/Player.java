@@ -32,5 +32,5 @@ public abstract class Player {
 	        throw new PieceNotFoundException("Piece not found!");
 	    }
 
-	    abstract public PlayerMove makeMove();
+	    
 }

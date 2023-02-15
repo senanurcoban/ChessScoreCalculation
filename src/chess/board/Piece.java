@@ -1,13 +1,9 @@
 package chess.board;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import chess.conditions.PieceCellOccupyBlocker;
-import chess.exceptions.InvalidMoveException;
 import chess.moves.BasicMovesClass;
 import chess.pieces.Color;
-import chess.player.Player;
 
 public abstract class Piece {
 
@@ -24,54 +20,38 @@ public abstract class Piece {
 	        this.pieceType = pieceType;
 	    }
 
-	    public void killIt() {
+
+		public PieceType getPieceType() {
+			return pieceType;
+		}
+
+		public Color getColor() {
+			return color;
+		}
+
+		public void killIt() {
 	        this.isKilled = true;
 	    }
+		
 
-	   // Parçayı geçerli hücreden belirli bir hücreye taşıma yöntemi.
-	    public void move(Player player, Cell toCell, Board board, List<PieceCellOccupyBlocker> additionalBlockers) {
-	        if (isKilled) {
-	            throw new InvalidMoveException("Invalidd");
-	        }
-	        List<Cell> nextPossibleCells = nextPossibleCells(board, additionalBlockers, player);
-	        if (!nextPossibleCells.contains(toCell)) {
-	            throw new InvalidMoveException("Invalid not found");
-	        }
+	    public boolean isKilled() {
+			return isKilled;
+		}
 
-	        killPieceInCell(toCell);
-	        this.currentCell.setCurrentPiece(null);
-	        this.currentCell = toCell;
-	        this.currentCell.setCurrentPiece(this);
-	        this.numMoves++;
-	    }
+		public Integer getNumMoves() {
+			return numMoves;
+		}
 
-	    // Belirli bir hücrede bir parçayı öldürmek için yardımcı yöntem.
-	    private void killPieceInCell(Cell targetCell) {
-	        if (targetCell.getCurrentPiece() != null) {
-	            targetCell.getCurrentPiece().killIt();
-	        }
-	    }
+		public Cell getCurrentCell() {
+			return currentCell;
+		}
 
-	    /**
-	     * Mevcut parçanın mevcut hücreden hareket edebileceği bir sonraki olası hücrelerin ne olduğunu söyleyen yöntem.
-	     *
-	     * @param board              Board on which the piece is present.
-	     * @param additionalBlockers Blockers which make a cell non-occupiable for a piece.
-	     * @param player             Player who owns the piece.
-	     * @return List of all next possible cells.
-	     */
-	    public List<Cell> nextPossibleCells(Board board, List<PieceCellOccupyBlocker> additionalBlockers, Player player) {
-	        List<Cell> result = new ArrayList<>();
-	        for (BasicMovesClass movesProvider : this.movesProviders) {
-	            List<Cell> cells = movesProvider.possibleMoves(this, board, additionalBlockers, player);
-	            if (cells != null) {
-	                result.addAll(cells);
-	            }
-	        }
-	        return removeDuplicates(result);
-	    }
+		public List<BasicMovesClass> getMovesProviders() {
+			return movesProviders;
+		}
 
-	    // İki parçanın aynı oyuncuya ait olup olmadığını kontrol etmek için yardımcı yöntem.
+
+		// İki parçanın aynı oyuncuya ait olup olmadığını kontrol etmek için yardımcı yöntem.
 	    public boolean isPieceFromSamePlayer(Piece piece) {
 	        return piece.getColor().equals(this.color);
 	    }

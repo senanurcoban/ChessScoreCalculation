@@ -1,6 +1,6 @@
 package chess.moves;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import chess.board.Board;
@@ -13,19 +13,20 @@ import chess.player.Player;
 
 public class VerticalMoveDirection extends BasicMovesClass {
 
-	 public VerticalMoveDirection(int maxSteps, MoveBaseCondition baseCondition,
-            PieceMoveFurtherCondition moveFurtherCondition, PieceCellOccupyBlocker baseBlocker) {
-            super(maxSteps, baseCondition, moveFurtherCondition, baseBlocker);
-            
-}
+	public VerticalMoveDirection(int maxSteps, MoveBaseCondition baseCondition,
+			PieceMoveFurtherCondition moveFurtherCondition, PieceCellOccupyBlocker baseBlocker) {
+		super(maxSteps, baseCondition, moveFurtherCondition, baseBlocker);
+		// TODO Auto-generated constructor stub
+	}
 
+	@Override
+	protected List<Cell> possibleMovesAsPerCurrentType(Piece piece, Board board,
+			List<PieceCellOccupyBlocker> additionalBlockers, Player player) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-@Override
-protected List<Cell> possibleMovesAsPerCurrentType(Piece piece, Board board,
-		List<PieceCellOccupyBlocker> additionalBlockers, chess.moves.Player player) {
-	return null;
-}
-
+	
 
 
 

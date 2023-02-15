@@ -1,6 +1,6 @@
 package chess.moves;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import chess.board.Board;
@@ -38,24 +38,7 @@ public abstract class BasicMovesClass {
     //Davranışlarına göre olası hareketleri vermek için her hareket türü tarafından uygulanması gereken soyut yöntem
     protected abstract List<Cell> possibleMovesAsPerCurrentType(Piece piece, Board board, List<PieceCellOccupyBlocker> additionalBlockers, Player player);
 
-    // Ulaşılabilen hücrelerin listesini oluşturmak için tüm alt türler tarafından kullanılan yardımcı yöntem.
-    protected List<Cell> findAllNextMoves(Piece piece, NextCellProvider nextCellProvider, Board board, List<PieceCellOccupyBlocker> cellOccupyBlockers, Player player) {
-        List<Cell> result = new ArrayList<>();
-        Cell nextCell = nextCellProvider.nextCell(piece.getCurrentCell());
-        int numSteps = 1;
-        while (nextCell != null && numSteps <= maxSteps) {
-            if (checkIfCellCanBeOccupied(piece, nextCell, board, cellOccupyBlockers, player)) {
-                result.add(nextCell);
-            }
-            if (!moveFurtherCondition.canPieceMoveFurtherFromCell(piece, nextCell, board)) {
-                break;
-            }
-
-            nextCell = nextCellProvider.nextCell(nextCell);
-            numSteps++;
-        }
-        return result;
-    }
+    
 
     
     // Belirli bir hücrenin parça tarafından işgal edilip edilemeyeceğini kontrol eden yardımcı yöntem. listesinden yararlanır
