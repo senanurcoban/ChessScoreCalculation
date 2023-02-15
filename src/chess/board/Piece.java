@@ -51,7 +51,7 @@ public abstract class Piece {
 		}
 
 
-		// İki parçanın aynı oyuncuya ait olup olmadığını kontrol etmek için yardımcı yöntem.
+		// İki parçanın aynı oyuncuya ait olup olmadığını kontrol etmek için 
 	    public boolean isPieceFromSamePlayer(Piece piece) {
 	        return piece.getColor().equals(this.color);
 	    }

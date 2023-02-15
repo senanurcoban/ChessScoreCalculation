@@ -1,6 +1,6 @@
 package chess.exceptions;
 
-// Getirilecek parça yoksa istisnasi
+// Getirilecek parça yoksa hatası
 public class PieceNotFoundException extends RuntimeException  {
 
 	private static final long serialVersionUID = 1L;

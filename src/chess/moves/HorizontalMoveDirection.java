@@ -15,7 +15,7 @@ public class HorizontalMoveDirection extends BasicMovesClass{
 	public HorizontalMoveDirection(int maxSteps, MoveBaseCondition baseCondition,
 			PieceMoveFurtherCondition moveFurtherCondition, PieceCellOccupyBlocker baseBlocker) {
 		super(maxSteps, baseCondition, moveFurtherCondition, baseBlocker);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override

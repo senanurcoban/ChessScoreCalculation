@@ -16,7 +16,7 @@ public class VerticalMoveDirection extends BasicMovesClass {
 	public VerticalMoveDirection(int maxSteps, MoveBaseCondition baseCondition,
 			PieceMoveFurtherCondition moveFurtherCondition, PieceCellOccupyBlocker baseBlocker) {
 		super(maxSteps, baseCondition, moveFurtherCondition, baseBlocker);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
