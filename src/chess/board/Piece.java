@@ -20,11 +20,11 @@ public abstract class Piece {
 	        this.pieceType = pieceType;
 	    }
 
-
+        // Constructor metodu
 		public Piece(Board board) {
 			this.color = null;
 			this.movesProviders = null;
-			// TODO Auto-generated constructor stub
+			
 		}
 
 

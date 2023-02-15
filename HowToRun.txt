@@ -1,0 +1,18 @@
+1- If you want to make a project with the java programming language on your computer, you must first download the JDK(Java Development Kit) component.
+-->Download link:https://www.oracle.com/java/technologies/downloads/
+
+After the jdk download and installation process is finished, the "C:\Program Files\Java\jdk-19\bin" link should be copied 
+and added to the advanced system properties on the computer as a path.
+
+Note:JDK version 19 is used in this project.
+
+2- You need to download an IDE to run the project.
+You can use Eclipse and Intellij Idea.
+
+-->Download link:https://www.eclipse.org/downloads/
+-->Download link:https://www.jetbrains.com/idea/
+
+3- A folder should be created on the desktop and GitBash or Cmd console should be opened in it.
+[git clone https://github.com/senanurcoban/ChessScoreCalculation.git ] command will be run and the project will come into the file.
+
+4- After downloading your ide, open the file from inside your ide.
