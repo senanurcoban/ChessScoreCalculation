@@ -36,5 +36,41 @@ public class WhitePlayer extends Player {
 				
 	}
 
+	public void print (String board[][])
+	{
+		
+		for(int i=0;i<8;i++) {
+    		for(int j=0;j<8;j++)
+    		{
+    			if(board[i][j].equalsIgnoreCase("fb"))
+    			{
+    				bishop++;
+    			}
+    			if(board[i][j].equalsIgnoreCase("pb"))
+    			{
+    				pawn++;
+    			}
+    			if(board[i][j].equalsIgnoreCase("ab"))
+    			{
+    				knight++;
+    			}
+    			if(board[i][j].equalsIgnoreCase("vb"))
+    			{
+    				queen++;
+    			}
+    			if(board[i][j].equalsIgnoreCase("sb"))
+    			{
+    				king++;
+    			}
+    			if(board[i][j].equalsIgnoreCase("kb"))
+    			{
+    				rook++;
+    			}
+    			
+    		}
+        		
+		}			    
+    		
+	}
 	
 }
