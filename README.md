@@ -20,8 +20,9 @@
          
 ## How do i run the project ! : <a href="https://github.com/senanurcoban/ChessScoreCalculation/blob/master/HowToRun.txt">How To Run </a>
          
-  ## ` Language ` 
-<p align="left"> <a href="https://www.java.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/><br/>
+  ## ` Language and Tool` 
+<p align="left"> <a href="https://www.java.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/>
+<a href="https://www.eclipse.com"target="_blank"> <img src="https://imgyukle.com/f/2023/02/15/QQbjLU.png"alt="eclipse" width="40" height="40"/>
   
 ## ` 📧 Contact`
 
