@@ -4,6 +4,7 @@ import chess.board.Board;
 import chess.pieces.ChessPieces;
 import chess.pieces.Color;
 
+// Queen(vezir) sınıfı
 public class Queen extends ChessPieces{
 
 	
@@ -12,6 +13,7 @@ public class Queen extends ChessPieces{
 		
 	}
 
+	// ToString() metodu ile --> nesnelerin metin karşılıklarını ekrana yazdırmak için kullanılır.
 	@Override
 	public String toString() {
 		return "v";

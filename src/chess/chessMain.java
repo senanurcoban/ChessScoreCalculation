@@ -16,11 +16,11 @@ public class chessMain {
 		ArrayList<String> array=new ArrayList<>();
 		String [][] board = new String [8][8];
 			
-	    File file = new File("C:\\cheesCalculation\\ChessScoreCalculation\\board2.txt");  
+	    File file = new File("C:\\cheesCalculation\\ChessScoreCalculation\\board3.txt");  
 	    Scanner sc = new Scanner(file);
 	  
-		
-		 //n
+		  // hasNextLine-->İşaretçinin okuduğu yerden bir sonraki alanda bir değer varsa TRUE döndürür.
+	     //  hasNext--> İşaretçinin bir sonraki alanında değer varsa TRUE döndürür.
 	       while (sc.hasNextLine())
 	       {
 	    	   Scanner s1 = new Scanner(sc.nextLine());
@@ -32,7 +32,7 @@ public class chessMain {
 		     }}
 	      int k=0;
 	      
-	    //n
+	    
 	      for(int i=0;i<8;i++)
 	      {
 	    	  for(int j=0;j<8;j++)
@@ -40,13 +40,15 @@ public class chessMain {
 	    		  board[i][j]=array.get(k++);
 	    	  }
 	      }
+	      
 	      System.out.println("---Dosya Okundu---");
 	      System.out.println("File Name: "+file.getName());
+	      System.out.println("************");
 	      BlackPlayer blackScore = new BlackPlayer(null);
 	      blackScore.print(board);
 	      blackScore.score();
 	      
-	      System.out.println("---");
+	      System.out.println("************");
 	      WhitePlayer whiteScore = new WhitePlayer(null);
 	      whiteScore.print(board);
 	      whiteScore.score();

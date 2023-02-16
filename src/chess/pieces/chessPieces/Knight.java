@@ -4,6 +4,7 @@ import chess.board.Board;
 import chess.pieces.ChessPieces;
 import chess.pieces.Color;
 
+// Knight(at) sınıfı
 public class Knight extends ChessPieces{
 
 	
@@ -12,7 +13,7 @@ public class Knight extends ChessPieces{
 		
 	}
 	
-
+	// ToString() metodu ile --> nesnelerin metin karşılıklarını ekrana yazdırmak için kullanılır.
 	@Override
 	public String toString() {
 		return "a";

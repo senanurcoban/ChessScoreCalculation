@@ -12,17 +12,20 @@ import chess.exceptions.PieceNotFoundException;
 //Yani oyuncunun tipine göre hamle yapabilir.
 public abstract class Player {
 
-	    List<Piece> pieces;
+	    List<Piece> pieces;                         // Oyuncunun birden fazla taşı olduğu için liste tipinde tutuldu.
 
+	    // Constructor metodu
 	    public Player(List<Piece> pieces) {
 	        this.pieces = pieces;
 	    }
 
-	    
+	    //Get metodu
 	    public List<Piece> getPieces() {
 			return pieces;
 		}
 
+	    // Kullanıcıya hata mesajı gösterebilmek için
+	    // For-each döngüsü ile liste içindeki elemanlar sadece okunabilir. 
 		public Piece getPiece(PieceType pieceType) {
 	        for (Piece piece : getPieces()) {
 	            if (piece.getPieceType() == pieceType) {

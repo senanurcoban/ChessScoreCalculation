@@ -10,6 +10,7 @@ import chess.conditions.PieceCellOccupyBlocker;
 import chess.conditions.PieceMoveFurtherCondition;
 import chess.player.Player;
 
+// Taşların yatay hareketini sağlamak için oluşturulan sınıf.
 public class HorizontalMoveDirection extends BasicMovesClass{
 
 	public HorizontalMoveDirection(int maxSteps, MoveBaseCondition baseCondition,
@@ -18,8 +19,9 @@ public class HorizontalMoveDirection extends BasicMovesClass{
 		
 	}
 
+	// Metot içi işlevler eksik !
 	@Override
-	protected List<Cell> possibleMovesAsPerCurrentType(Piece piece, Board board,
+	protected List<Cell> MovesAsPerCurrentType(Piece piece, Board board,
 			List<PieceCellOccupyBlocker> additionalBlockers, Player player) {
 		// TODO Auto-generated method stub
 		return null;

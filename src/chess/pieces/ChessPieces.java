@@ -15,6 +15,7 @@ public abstract class ChessPieces extends Piece{
 		this.color = color;
 	}
 
+	// Get metotları
 	public Color getColor() {
 		return color;
 	}
@@ -24,10 +25,12 @@ public abstract class ChessPieces extends Piece{
 		return moveCount;
 	}
 
+	// Satranç taşlarının hareket artışı için
 	public void increaseMoveCount() {
 		moveCount++;
 	}
 	
+	// Satranç taşlarının hareket azalışı için
 	public void decreaseMoveCount() {
 		moveCount--;
 	}

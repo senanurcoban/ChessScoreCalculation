@@ -4,6 +4,7 @@ import chess.board.Board;
 import chess.pieces.ChessPieces;
 import chess.pieces.Color;
 
+// King(şah) sınıfı
 public class King extends ChessPieces{
 
 	
@@ -13,6 +14,7 @@ public class King extends ChessPieces{
 		
 	}
 	
+	// ToString() metodu ile --> nesnelerin metin karşılıklarını ekrana yazdırmak için kullanılır.
 	@Override
 	public String toString() {
 		return "s";

@@ -10,6 +10,8 @@ import chess.conditions.PieceCellOccupyBlocker;
 import chess.conditions.PieceMoveFurtherCondition;
 import chess.player.Player;
 
+// Taşların çarpraz hareketini sağlamak için oluşturulan sınıf.
+// Örneğin bishop(fil) taşı tahtada çapraz ilerlemektedir.
 public class DiagonalMoveDirection extends BasicMovesClass{
 
 	public DiagonalMoveDirection(int maxSteps, MoveBaseCondition baseCondition,
@@ -18,8 +20,9 @@ public class DiagonalMoveDirection extends BasicMovesClass{
 		
 	}
 
+	// Metot içi işlevler eksik !
 	@Override
-	protected List<Cell> possibleMovesAsPerCurrentType(Piece piece, Board board,
+	protected List<Cell> MovesAsPerCurrentType(Piece piece, Board board,
 			List<PieceCellOccupyBlocker> additionalBlockers, Player player) {
 		// TODO Auto-generated method stub
 		return null;

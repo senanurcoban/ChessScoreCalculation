@@ -1,13 +1,13 @@
 package chess.board;
 
 
-// Bir satranç tahtası oyunu için model sınıfı. 
-// Bir panonun bir boyutu ve bir hücre ızgarası vardır.
+// Bir satranç oyunu tahtası için model sınıfı. 
+// Bir panonun bir boyutu ve ızgarası vardır.
 
 public class Board {
 
-	int boardSize;
-    Cell[][] cells;
+	int boardSize;          // 8*8 lik ebat
+    Cell[][] cells;        // Kare şeklinde toplam 64 adet hücre
 
     // Constructor metodu
     public Board(int boardSize, Cell[][] cells) {

@@ -5,15 +5,17 @@ import java.util.List;
 import chess.moves.BasicMovesClass;
 import chess.pieces.Color;
 
+// Satranç tahtasında bulunan taşlar için bir soyut sınıf oluşturuldu.
 public abstract class Piece {
 
-	    private boolean isKilled = false;
-	    private final Color color;
-	    protected final List<BasicMovesClass> movesProviders;
-	    private Integer numMoves = 0;
-	    PieceType pieceType;
-	    private Cell currentCell;
+	    private boolean isKilled = false;                        // Taşların birbirini götürme durumu için bir boolean değişken tanımlandı.              
+	    private final Color color;                              // Taş renkleri sabit siyah ve beyaz olduğu için final bir değişken olarak tanımlandı.
+	    protected final List<BasicMovesClass> movesProviders;  // Taşların oyun sırasında birden fazla hareketleri olduğu için liste şeklinde değerler tutuldu.
+	    private Integer numMoves = 0;                          
+	    PieceType pieceType;                                 // 6 adet taş tipi bulunmaktadır. Oluşturulan enum sınıfından bir nesne oluşturuldu.
+	    private Cell currentCell;                           // Tahtada bulunan hücre sınıfından bir değişken oluşturuldu.
 
+	    // Parametreli Constructor metodu
 	    public Piece(final Color color, final List<BasicMovesClass> movesProviders,  final PieceType pieceType) {
 	        this.color = color;
 	        this.movesProviders = movesProviders;
@@ -27,7 +29,9 @@ public abstract class Piece {
 			
 		}
 
-
+      // GET metodları --->  Geri dönüşü olan metotlar ve isimlendirilmesi ise get ile başlayıp sonra değişken ismi yazılmalıdır. 
+		
+		
 		public PieceType getPieceType() {
 			return pieceType;
 		}
@@ -35,10 +39,6 @@ public abstract class Piece {
 		public Color getColor() {
 			return color;
 		}
-
-		public void killIt() {
-	        this.isKilled = true;
-	    }
 		
 
 	    public boolean isKilled() {
